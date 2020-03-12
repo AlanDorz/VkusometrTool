@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'OCRF-RegularOSFC';
+  src: url('OCRF-RegularOSFC.eot');
+  src: url('OCRF-RegularOSFC.eot?#iefix') format('embedded-opentype'),
+       url('OCRF-RegularOSFC.svg#OCRF-RegularOSFC') format('svg'),
+       url('OCRF-RegularOSFC.ttf') format('truetype'),
+       url('OCRF-RegularOSFC.woff') format('woff'),
+       url('OCRF-RegularOSFC.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
