@@ -1,15 +1,34 @@
 // ---anime---
 
+let apple = document.querySelector('.img_apple')
+
 let appleScale = anime({
-    targets: '.img_apple',
-    scale: 2,
+    targets: apple,
+    // width: ['46vh', '90vh'],
+    scale: 5,
+    easing: 'linear',
+    // top: '300vh',
     autoplay: false
 })
 
-let appleBtn = document.querySelector('.img_apple')
-appleBtn.onclick = appleScale.play
+// let appleBtn = document.querySelector('.img_apple')
+// appleBtn.onclick = appleScale.play
 
 // ---magicScroll---
+
+let controller = new ScrollMagic.Controller()
+
+let appleScene = document.querySelector('section')
+
+new ScrollMagic.Scene({
+    triggerElement: 'section',
+    duration: appleScene.getBoundingClientRect().height
+})
+.addTo(controller)
+.setPin(apple)
+.on('progress', function(e) {
+    appleScale.seek(appleScale.duration * e.progress)
+})
 
 // let controller = new ScrollMagic.Controller({
 //     globalSceneOptions: {
