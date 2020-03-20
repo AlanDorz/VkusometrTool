@@ -90,20 +90,72 @@ p {
 
 .img_apple {
     width: 25vh;
-    display: block;
-    margin: 24vh auto;
+    /* margin: 24vh auto; */
     z-index: 0;
-    transform-origin: center;
-    transform: translateY(-50%);
+    /* position: absolute; */
+    /* transform-origin: center; */
 }
 
 section {
-    height: 300vh;
+    height: 650vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* position: relative; */
 }
 
+/* ---id--- */
+
+.apple01 {
+    width: 25vh;
+}
+
+.apple02 {
+    width: 31vh;
+    padding-right: 3vh;
+}
+
+.apple03 {
+    width: 30vh;
+    padding-top: 2vh;
+    padding-right: 2vh;
+}
+
+.apple04 {
+    width: 30vh;
+    padding-top: 2vh;
+    padding-right: 2vh;
+}
+
+.apple05 {
+    width: 27vh;
+    padding-top: 2vh;
+    padding-right: 0;
+}
+
+.apple06 {
+    width: 33vh;
+    padding-top: 1vh;
+    padding-right: 5vh;
+}
+
+.apple07 {
+    width: 36vh;
+    padding-top: 4vh;
+    padding-right: 5vh;
+}
+
+.apple08 {
+    width: 30vh;
+}
+
+.apple09 {
+    width: 30vh;
+}
+
+.apple10 {
+    width: 30vh;
+}
 
 
 
