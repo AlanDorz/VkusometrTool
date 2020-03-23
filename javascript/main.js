@@ -12,7 +12,7 @@ appleBtn.onclick = () => {
     switch (steps) {
         case 2:
             console.log(steps);
-            imgApple.src = imgApple.src.replace(/01/g,'02')
+            imgApple.src = imgApple.src.replace(/01.png/g,'02.svg')
             imgApple.classList.toggle('img_apple')
             imgApple.classList.toggle('apple02')
             steps++

@@ -93,7 +93,7 @@ p {
     /* margin: 24vh auto; */
     z-index: 0;
     /* position: absolute; */
-    /* transform-origin: center; */
+    transform-origin: center;
 }
 
 section {
@@ -111,7 +111,7 @@ section {
 }
 
 .apple02 {
-    width: 31vh;
+    width: 33vh;
     padding-right: 3vh;
 }
 
@@ -134,27 +134,33 @@ section {
 }
 
 .apple06 {
-    width: 33vh;
+    width: 34vh;
     padding-top: 1vh;
     padding-right: 5vh;
 }
 
 .apple07 {
-    width: 36vh;
-    padding-top: 4vh;
-    padding-right: 5vh;
+    width: 47vh;
+    padding-top: 5vh;
+    padding-right: 11vh;
 }
 
 .apple08 {
-    width: 30vh;
+    width: 49vh;
+    padding-top: 6vh;
+    padding-right: 13vh;
 }
 
 .apple09 {
-    width: 30vh;
+    width: 51vh;
+    padding-top: 5vh;
+    padding-right: 13vh;
 }
 
 .apple10 {
-    width: 30vh;
+    width: 45vh;
+    padding-top: 2vh;
+    padding-right: 13vh;
 }
 
 
