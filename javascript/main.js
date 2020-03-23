@@ -1,6 +1,9 @@
+
+
+// -------
+
 let imgApple = document.getElementById('replaceImg')
 let steps = 2
-
 
 // imgApple.classList.remove
 // imgApple.classList.add
@@ -14,7 +17,7 @@ appleBtn.onclick = () => {
             console.log(steps);
             imgApple.src = imgApple.src.replace(/01.png/g,'02.svg')
             imgApple.classList.toggle('img_apple')
-            imgApple.classList.toggle('apple02')
+            imgApple.classList.toggle('apple02') 
             steps++
             break;
 
@@ -91,27 +94,27 @@ appleBtn.onclick = () => {
 
 // ---anime---
 
-let apple = document.querySelectorAll('.img_apple')
+// let apple = document.querySelectorAll('.img_apple')
 
-let appleScale = anime({
-    targets: apple,
-    scale: 15,
-    easing: 'linear',
-    autoplay: false
-})
+// let appleScale = anime({
+//     targets: apple,
+//     scale: 18,
+//     easing: 'linear',
+//     autoplay: false
+// })
 
-// ---magicScroll---
+// // ---magicScroll---
 
-let controller = new ScrollMagic.Controller()
+// let controller = new ScrollMagic.Controller()
 
-let appleScene = document.querySelector('section')
+// let appleScene = document.querySelector('section')
 
-new ScrollMagic.Scene({
-    triggerElement: 'section',
-    duration: appleScene.getBoundingClientRect().height
-})
-.addTo(controller)
-.setPin(apple)
-.on('progress', function(e) {
-    appleScale.seek(appleScale.duration * e.progress)
-})
+// new ScrollMagic.Scene({
+//     triggerElement: 'section',
+//     duration: appleScene.getBoundingClientRect().height
+// })
+// .addTo(controller)
+// .setPin(apple)
+// .on('progress', function(e) {
+//     appleScale.seek(appleScale.duration * e.progress)
+// })

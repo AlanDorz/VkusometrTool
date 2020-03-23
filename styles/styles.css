@@ -93,15 +93,27 @@ p {
     /* margin: 24vh auto; */
     z-index: 0;
     /* position: absolute; */
-    transform-origin: center;
+    transform-origin: top;
+    /* position: fixed; */
+}
+
+div {
+    height: 200vh;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
 }
 
 section {
-    height: 650vh;
+    /* margin-top: 50vh; */
+    height: 100vh;
+    /* height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
+    /* overflow-y: hidden; */
+    position: fixed;
+    transform-origin: 50% 48%;
 }
 
 /* ---id--- */
@@ -111,56 +123,56 @@ section {
 }
 
 .apple02 {
-    width: 33vh;
-    padding-right: 3vh;
+    width: 27vh;
+    padding-right: 0vh;
 }
 
 .apple03 {
-    width: 30vh;
+    width: 27vh;
     padding-top: 2vh;
-    padding-right: 2vh;
+    padding-right: 0vh;
 }
 
 .apple04 {
-    width: 30vh;
+    width: 27vh;
     padding-top: 2vh;
-    padding-right: 2vh;
+    padding-right: 0vh;
 }
 
 .apple05 {
-    width: 27vh;
+    width: 26vh;
     padding-top: 2vh;
     padding-right: 0;
 }
 
 .apple06 {
-    width: 34vh;
+    width: 30vh;
     padding-top: 1vh;
-    padding-right: 5vh;
+    padding-right: 2vh;
 }
 
 .apple07 {
-    width: 47vh;
-    padding-top: 5vh;
-    padding-right: 11vh;
+    width: 37vh;
+    padding-top: 9vh;
+    padding-right: 3vh;
 }
 
 .apple08 {
-    width: 49vh;
-    padding-top: 6vh;
-    padding-right: 13vh;
+    width: 39vh;
+    padding-top: 13vh;
+    padding-right: 3vh;
 }
 
 .apple09 {
-    width: 51vh;
-    padding-top: 5vh;
-    padding-right: 13vh;
+    width: 41vh;
+    padding-top: 9vh;
+    padding-right: 3.5vh;
 }
 
 .apple10 {
-    width: 45vh;
+    width: 37vh;
     padding-top: 2vh;
-    padding-right: 13vh;
+    padding-right: 5vh;
 }
 
 
