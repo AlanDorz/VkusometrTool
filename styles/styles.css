@@ -7,22 +7,62 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-html {
-    height: 100%;
-}
-
+html,
 body {
     margin: 0 auto;
-    background-color: #FFD28F;
+    padding: 0;
     font-size: 3vh;
     font-family: 'OCRF-RegularOSFC';
     line-height: 110%;
-    height: 100%;
+    height: auto;
+    /* background-color: black; */
+    z-index: 0;
+}
+
+section.main-object {
+    height: 250vh;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    background-color: #FFD28F;
+    /* opacity: 1; */
+    z-index: 2;
+}
+
+canvas {
+    position: fixed;
+    bottom: 0vh;
+    opacity: 1;
+    /* display: none; */
+    z-index: -1;
+}
+
+div {
+    /* margin-top: 50vh; */
+    height: 100vh;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow-y: hidden; */
+    position: fixed;
+    transform-origin: 50% 48%;
+    z-index: 2;
+}
+
+div.black-cover {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* opacity: 0.5; */
+    z-index: 3;
 }
 
 p {
+    color: white;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
 }
 
 .p_textUp {
@@ -56,6 +96,7 @@ p {
     /* height: 19.5vw; */
     /* height: 72px; */
     position: fixed;
+    z-index: 4;
 }
 
 .img_indicator {
@@ -66,6 +107,7 @@ p {
     right: 4vw;
     /* transform: translateX(-16px) translateY(16px); */
     transform: translateX(-2.4vh) translateY(2.4vh);
+    z-index: 4;
 }
 
 .img_borderUpLeft {
@@ -95,25 +137,6 @@ p {
     /* position: absolute; */
     transform-origin: top;
     /* position: fixed; */
-}
-
-div {
-    height: 200vh;
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
-}
-
-section {
-    /* margin-top: 50vh; */
-    height: 100vh;
-    /* height: 100%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* overflow-y: hidden; */
-    position: fixed;
-    transform-origin: 50% 48%;
 }
 
 /* ---id--- */

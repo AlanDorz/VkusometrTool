@@ -1,16 +1,7 @@
-
-
-// -------
-
 let imgApple = document.getElementById('replaceImg')
 let steps = 2
 
-// imgApple.classList.remove
-// imgApple.classList.add
-// imgApple.classList.toggle
-// }
-
-let appleBtn = document.querySelector('section')
+let appleBtn = document.querySelector('div')
 appleBtn.onclick = () => {
     switch (steps) {
         case 2:
@@ -90,7 +81,141 @@ appleBtn.onclick = () => {
     }
     
     console.log(1,2,3);
+}
+
+// ---atoms' environment---
+
+let stars = []
+let rectangles = []
+let speed
+let value = 0
+
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    for (var i = 0; i < 250; i++) {
+        stars[i] = new Star()
     }
+    frameRate(30)
+    background(0)
+    noLoop()
+}
+
+function windowResized() {
+    createCanvas(windowWidth, windowHeight)
+    for (var i = 0; i < 250; i++) {
+        stars[i] = new Star()
+    }
+    frameRate(30)
+    background(0)
+    noLoop()
+}
+
+function draw(progress) {
+    speed = map(mouseX, 0, width, 0, 20)
+    translate(width / 2, height / 2)
+    background(0)
+    for (var i = 0; i < stars.length; i++) {
+        stars[i].update()
+        stars[i].display()
+        stars[i].move()
+    }
+    for (var i = 0; i < rectangles.length; i++) {
+        rectangles[i].update()
+        rectangles[i].display()
+        rectangles[i].move()
+    }
+}
+
+function mouseMoved() {
+    redraw(0.01)
+}
+// function mouseDragged() {
+//   redraw(0.01)
+// }
+
+// --- Star settings ---
+
+function Star() {
+    this.x = random(-width, width)
+    this.y = random(-height, height)
+    this.z = random(width)
+    this.r = random(255)
+    this.g = random(255)
+    this.b = random(255)
+
+    this.update = function () {
+        this.z = this.z - 15
+        if (this.z < 1) {
+            this.z = width
+            this.x = random(-width, width)
+            this.y = random(-height, height)
+        }
+    }
+
+    this.display = function () {
+        var sx = map(this.x / this.z, 0, 1, 0, width)
+        var sy = map(this.y / this.z, 0, 1, 0, height)
+        stroke(this.r, this.g, this.b)
+        strokeWeight(2)
+        noFill()
+        // fill(this.r, this.g, this.b)
+        var r = map(this.z, 0, width, 50, 0)
+        circle(sx, sy, r * 4)
+    }
+
+    this.move = function () {
+        this.x = this.x + random(-2, 2)
+        this.y = this.y + random(-2, 2)
+    }
+}
+
+// --- Triangle settings ---
+
+function mouseClicked() {
+    if (value < 400) {
+        console.log(value)
+        for (var i = 0; i < 10; i++) {
+            rectangles[value] = new Rect(mouseX, mouseY)
+            value++
+            stars.pop()
+        }
+    }
+}
+
+function Rect() {
+    this.x = random(-width, width)
+    this.y = random(-height, height)
+    this.z = random(width)
+    this.r = random(255)
+    this.g = random(255)
+    this.b = random(255)
+
+    this.update = function () {
+        this.z = this.z - 15
+
+        if (this.z < 1) {
+            this.z = width
+            this.x = random(-width, width)
+            this.y = random(-height, height)
+        }
+    }
+
+    this.display = function () {
+        var sx = map(this.x / this.z, 0, 1, 0, width)
+        var sy = map(this.y / this.z, 0, 1, 0, height)
+        stroke(this.r, this.g, this.b)
+        strokeWeight(2)
+        noFill()
+        // fill(this.r, this.g, this.b)
+        var r = map(this.z, 0, width, 50, 0)
+        rect(sx, sy, r * 4, r * 4)
+    }
+
+    this.move = function () {
+        this.x = this.x + random(-2, 2)
+        this.y = this.y + random(-2, 2)
+    }
+}
 
 // ---anime---
 
@@ -107,10 +232,10 @@ appleBtn.onclick = () => {
 
 // let controller = new ScrollMagic.Controller()
 
-// let appleScene = document.querySelector('section')
+// let appleScene = document.querySelector('div')
 
 // new ScrollMagic.Scene({
-//     triggerElement: 'section',
+//     triggerElement: 'div',
 //     duration: appleScene.getBoundingClientRect().height
 // })
 // .addTo(controller)

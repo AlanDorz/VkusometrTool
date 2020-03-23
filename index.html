@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
     <script>
         window.onload = function () {
             lax.setup() // init
@@ -23,19 +25,22 @@
     </script>
 </head>
 <body>
-    <div>
-        <p class="p_textUp">ОБЪЕКТ:<br>ЯБЛОКО</p>
-        <p class="p_textDownLeft">СОСТОЯНИЕ:<br>ГЕОМЕТРИЧНОСТЬ</p>
-        <p class="p_textDownRight">0%</p>
-        <section class="lax" data-lax-scale="0 2, vh 10">
+    <section>
+        <p class="lax p_textUp" data-lax-brightness="(elh*0.3) 0, vh 100">ОБЪЕКТ:<br>ЯБЛОКО</p>
+        <p class="lax p_textDownLeft" data-lax-brightness="(elh*0.3) 0, vh 100">СОСТОЯНИЕ:<br>ГЕОМЕТРИЧНОСТЬ</p>
+        <p class="lax p_textDownRight" data-lax-brightness="(elh*0.3) 0, vh 100">0%</p>
+        <img class="lax img_indicator" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/indicator.svg" alt="Индикатор">
+        <img class="lax img_borderUpLeft" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderUpLeft.svg" alt="Верхняя левая границы">
+        <img class="lax img_borderUpRight" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderUpRight.svg" alt="Верхняя правая границы">
+        <img class="lax img_borderDownLeft" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderDownLeft.svg" alt="Нижняя левая границы">
+        <img class="lax img_borderDownRight" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderDownRight.svg" alt="Нижняя правая границы">
+    </section>
+    <div class="lax black-cover" data-lax-opacity="(elh*0.5) 0, (elh*0.8) 1, (elh*1.3) 0"></div>
+    <section class="lax main-object" data-lax-opacity="(vh*0.8) 1, (vh*0.9) 0">
+        <div class="lax" data-lax-scale="0 2, elh 10">
             <img id="replaceImg" class="lax img_apple"  src="img/apple_01.png" alt="Яблоко">
-        </section>
-        <img class='img_indicator' src="img/indicator.svg" alt="Индикатор">
-        <img class='img_borderUpLeft' src="img/borderUpLeft.svg" alt="Верхняя левая границы">
-        <img class='img_borderUpRight' src="img/borderUpRight.svg" alt="Верхняя правая границы">
-        <img class='img_borderDownLeft' src="img/borderDownLeft.svg" alt="Нижняя левая границы">
-        <img class='img_borderDownRight' src="img/borderDownRight.svg" alt="Нижняя правая границы">
-    </div>
+        </div>
+    </section>
     <script src="javascript/main.js"></script>
 </body>
 </html>
