@@ -92,22 +92,22 @@ let value = 0
 
 function setup() {
     createCanvas(windowWidth, windowHeight)
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < 500; i++) {
         stars[i] = new Star()
     }
     frameRate(30)
     background(0)
-    noLoop()
+    // noLoop()
 }
 
 function windowResized() {
     createCanvas(windowWidth, windowHeight)
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < 500; i++) {
         stars[i] = new Star()
     }
     frameRate(30)
     background(0)
-    noLoop()
+    // noLoop()
 }
 
 function draw(progress) {
@@ -126,12 +126,13 @@ function draw(progress) {
     }
 }
 
-function mouseMoved() {
-    redraw(0.01)
-}
-// function mouseDragged() {
-//   redraw(0.01)
+// function mouseMoved() {
+//     redraw(0.01)
 // }
+function mouseWheel() {
+  noLoop();
+  loop();
+}
 
 // --- Star settings ---
 
@@ -172,9 +173,9 @@ function Star() {
 // --- Triangle settings ---
 
 function mouseClicked() {
-    if (value < 400) {
+    if (value < 501) {
         console.log(value)
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 20; i++) {
             rectangles[value] = new Rect(mouseX, mouseY)
             value++
             stars.pop()
