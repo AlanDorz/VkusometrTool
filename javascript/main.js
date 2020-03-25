@@ -80,7 +80,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/09/g,'10')
             imgApple.classList.toggle('apple09')
             imgApple.classList.toggle('apple10')
-            changeValue(getRandomInt(350, 400))
+            changeValueFinal()
             break; 
 
         default:
@@ -252,6 +252,14 @@ let text03 = new Typed('.p_textDownRight', {
 function changeValue(persentage) {
     new Typed('.p_textDownRight', {
         strings: ['',`${persentage}%`],
+        typeSpeed: 30,
+        smartBackspace: true
+    })
+}
+
+function changeValueFinal() {
+    new Typed('.p_textDownRight', {
+        strings: ['','MAX%'],
         typeSpeed: 30,
         smartBackspace: true
     })
