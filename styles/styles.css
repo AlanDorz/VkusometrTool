@@ -19,6 +19,10 @@ body {
     z-index: -2;
 }
 
+section {
+    height: 0;
+}
+
 section.main-object {
     height: 250vh;
     /* position: relative; */
@@ -107,6 +111,8 @@ p {
     z-index: 4;
 }
 
+.img_indicator-correct,
+.img_indicator-error,
 .img_indicator {
     position: fixed;
     height: 4.8vh;
@@ -116,6 +122,18 @@ p {
     /* transform: translateX(-16px) translateY(16px); */
     transform: translateX(-2.4vh) translateY(2.4vh);
     z-index: 4;
+}
+
+.img_indicator-correct {
+    /* transform: ; */
+    height: 2.5vh;
+    transform: translateX(-2.9vh) translateY(3.5vh);
+}
+
+.img_indicator-error {
+    /* transform: ; */
+    height: 2.5vh;
+    transform: translateX(-4.4vh) translateY(3.5vh);
 }
 
 .img_borderUpLeft {
@@ -206,7 +224,13 @@ p {
     padding-right: 5vh;
 }
 
+.typed-cursor {
+    display: none;
+}
 
+.typed-fade-out {
+    display: none;
+}
 
 
 

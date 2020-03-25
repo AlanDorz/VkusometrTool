@@ -11,6 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script>
         window.onload = function () {
             lax.setup() // init
@@ -26,10 +28,11 @@
 </head>
 <body>
     <section>
-        <p class="lax p_textUp" data-lax-brightness="(elh*0.3) 0, vh 100">ОБЪЕКТ:<br>ЯБЛОКО</p>
-        <p class="lax p_textDownLeft" data-lax-brightness="(elh*0.3) 0, vh 100">СОСТОЯНИЕ:<br>ГЕОМЕТРИЧНОСТЬ</p>
-        <p class="lax p_textDownRight" data-lax-brightness="(elh*0.3) 0, vh 100">0%</p>
-        <img class="lax img_indicator" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/indicator.svg" alt="Индикатор">
+        <p id="textAnime01" class="lax p_textUp" data-lax-brightness="(elh*0.3) 0, vh 100"></p>
+        <p id="textAnime02" class="lax p_textDownLeft" data-lax-brightness="(elh*0.3) 0, vh 100"></p>
+        <p id="textAnime03" class="lax p_textDownRight" data-lax-brightness="(elh*0.3) 0, vh 100"></p>
+        <img class="lax img_indicator" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/indicator-border.svg" alt="Индикатор">
+        <img id="errors" class="lax img_indicator-correct" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/indicator-correct.svg" alt="Индикатор">
         <img class="lax img_borderUpLeft" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderUpLeft.svg" alt="Верхняя левая границы">
         <img class="lax img_borderUpRight" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderUpRight.svg" alt="Верхняя правая границы">
         <img class="lax img_borderDownLeft" data-lax-brightness="(elh*0.3) 0, vh 100" src="img/borderDownLeft.svg" alt="Нижняя левая границы">

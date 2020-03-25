@@ -1,6 +1,7 @@
 let imgApple = document.getElementById('replaceImg')
 let steps = 0
 let value = 0
+let indicator = document.getElementById('errors')
 
 let valueBtn = document.querySelector('.value-btn')
 valueBtn.onclick = () => {
@@ -10,6 +11,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/01/g,'02')
             imgApple.classList.toggle('img_apple')
             imgApple.classList.toggle('apple02') 
+            changeValue(getRandomInt(1, 25))
             break;
 
         case 6:
@@ -17,6 +19,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/02/g,'03')
             imgApple.classList.toggle('apple02')
             imgApple.classList.toggle('apple03')
+            changeValue(getRandomInt(25, 50))
             break;
 
         case 9:
@@ -24,6 +27,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/03/g,'04')
             imgApple.classList.toggle('apple03')
             imgApple.classList.toggle('apple04')
+            changeValue(getRandomInt(50, 80))
             break; 
 
         case 12:
@@ -31,6 +35,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/04/g,'05')
             imgApple.classList.toggle('apple04')
             imgApple.classList.toggle('apple05')
+            changeValue(getRandomInt(100, 101))
             break; 
         
         case 15:
@@ -38,6 +43,12 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/05/g,'06')
             imgApple.classList.toggle('apple05')
             imgApple.classList.toggle('apple06')
+            indicator.src = indicator.src.replace(/correct/g,'error')
+            indicator.classList.toggle('img_indicator-correct')
+            indicator.classList.toggle('img_indicator-error')
+            correct.pause()
+            error.play()
+            changeValue(getRandomInt(101, 200))
             break; 
 
         case 18:
@@ -45,6 +56,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/06/g,'07')
             imgApple.classList.toggle('apple06')
             imgApple.classList.toggle('apple07')
+            changeValue(getRandomInt(200, 250))
             break; 
 
         case 21:
@@ -52,6 +64,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/07/g,'08')
             imgApple.classList.toggle('apple07')
             imgApple.classList.toggle('apple08')
+            changeValue(getRandomInt(250, 300))
             break; 
 
         case 24:
@@ -59,6 +72,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/08/g,'09')
             imgApple.classList.toggle('apple08')
             imgApple.classList.toggle('apple09')
+            changeValue(getRandomInt(300, 350))
             break; 
 
         case 27:
@@ -66,6 +80,7 @@ valueBtn.onclick = () => {
             imgApple.src = imgApple.src.replace(/09/g,'10')
             imgApple.classList.toggle('apple09')
             imgApple.classList.toggle('apple10')
+            changeValue(getRandomInt(350, 400))
             break; 
 
         default:
@@ -217,6 +232,86 @@ function Rect() {
     }
 }
 
+// ---Text animation---
+
+let text01 = new Typed('.p_textUp', {
+    strings: ["ОБЪЕКТ:<br>ЯБЛОКО"],
+    typeSpeed: 30
+})
+
+let text02 = new Typed('.p_textDownLeft', {
+    strings: ["^800 СОСТОЯНИЕ:<br>ГЕОМЕТРИЧНОСТЬ"],
+    typeSpeed: 30
+})
+
+let text03 = new Typed('.p_textDownRight', {
+    strings: ["^2100 0%"],
+    typeSpeed: 30
+})
+
+function changeValue(persentage) {
+    new Typed('.p_textDownRight', {
+        strings: ['',`${persentage}%`],
+        typeSpeed: 30,
+        smartBackspace: true
+    })
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min)) + min 
+}
+
+// ---indicatorAnimation---
+
+let correct = anime({
+    targets: '.img_indicator-correct',
+    opacity: [1, 0],
+    easing: 'easeInOutExpo',
+    direction: 'alternate',
+    duration: 500,
+    delay: 500,
+    loop: true
+})
+
+let error = anime({
+    targets: '.img_indicator-correct',
+    opacity: [1, 0],
+    easing: 'easeInOutExpo',
+    direction: 'alternate',
+    duration: 240,
+    delay: 0,
+    loop: true,
+    autoplay: false
+})
+
+// function writeTextByJS(id, text, speed) {
+
+//     let ele = document.getElementById(id),
+//         txt = text.join("").split("")
+
+//     let interval = setInterval(function () {
+
+//         if (!txt[0]) {
+
+//             return clearInterval(interval)
+//         }
+
+//         ele.innerHTML += txt.shift()
+//     }, speed != undefined ? speed : 100)
+
+//     return false
+// }
+
+// writeTextByJS(
+//     "textAnime01",
+//     [
+//         "ОБЪЕКТ:\n",
+//         "ЯБЛОКО\n"
+//     ],
+//     50
+// )
 // let appleSpace = document.querySelector('.main-object')
 // let blackCover = document.querySelector('.black-cover')
 
