@@ -12,6 +12,7 @@ valueBtn.onclick = () => {
             imgApple.classList.toggle('img_apple')
             imgApple.classList.toggle('apple02') 
             changeValue(getRandomInt(1, 25))
+            // persentageAlert()
             break;
 
         case 6:
@@ -248,6 +249,21 @@ let text03 = new Typed('.p_textDownRight', {
     strings: ["^2100 0%"],
     typeSpeed: 30
 })
+
+let counter = 0
+
+valueBtn.onmouseover = () => {
+    if (counter < 1) {
+        new Typed('.p_textCenter', {
+            strings: ["^300 НАЖМИТЕ ДЛЯ ТРАНСФОРМАЦИИ", "^100 СЛЕДИТЕ ЗА ПРОЦЕНТАМИ ", ""],
+            typeSpeed: 30,
+            backSpeed: 10,
+            backDelay: 1000
+        })
+    }
+    counter++
+}
+
 
 function changeValue(persentage) {
     new Typed('.p_textDownRight', {

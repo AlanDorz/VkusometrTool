@@ -90,6 +90,14 @@ p {
     transform: translateX(2vh) translateY(-1.7vh);
 }
 
+.p_textCenter {
+    left: 4vw;
+    bottom: 6vw;
+    text-align: right;
+    /* transform: translateX(13px) translateY(-11px); */
+    transform: translateX(2vh) translateY(-8.3vh);
+}
+
 .p_textDownRight {
     /* font-size: 22px; */
     font-size: 3.3vh;
