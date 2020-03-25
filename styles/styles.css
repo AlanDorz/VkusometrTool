@@ -59,6 +59,14 @@ div.black-cover {
     z-index: 3;
 }
 
+div.value-btn {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    bottom: -150vh;
+    z-index: 5;
+}
+
 p {
     color: white;
     position: fixed;

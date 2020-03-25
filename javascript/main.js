@@ -1,85 +1,77 @@
 let imgApple = document.getElementById('replaceImg')
-let steps = 2
+let steps = 0
+let value = 0
 
-let appleBtn = document.querySelector('div')
-appleBtn.onclick = () => {
+let valueBtn = document.querySelector('.value-btn')
+valueBtn.onclick = () => {
     switch (steps) {
-        case 2:
+        case 3:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/01/g,'02')
             imgApple.classList.toggle('img_apple')
             imgApple.classList.toggle('apple02') 
-            steps++
             break;
 
-        case 3:
+        case 6:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/02/g,'03')
             imgApple.classList.toggle('apple02')
             imgApple.classList.toggle('apple03')
-            steps++
             break;
 
-        case 4:
+        case 9:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/03/g,'04')
             imgApple.classList.toggle('apple03')
             imgApple.classList.toggle('apple04')
-            steps++
             break; 
 
-        case 5:
+        case 12:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/04/g,'05')
             imgApple.classList.toggle('apple04')
             imgApple.classList.toggle('apple05')
-            steps++
             break; 
         
-        case 6:
+        case 15:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/05/g,'06')
             imgApple.classList.toggle('apple05')
             imgApple.classList.toggle('apple06')
-            steps++
             break; 
 
-        case 7:
+        case 18:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/06/g,'07')
             imgApple.classList.toggle('apple06')
             imgApple.classList.toggle('apple07')
-            steps++
             break; 
 
-        case 8:
+        case 21:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/07/g,'08')
             imgApple.classList.toggle('apple07')
             imgApple.classList.toggle('apple08')
-            steps++
             break; 
 
-        case 9:
+        case 24:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/08/g,'09')
             imgApple.classList.toggle('apple08')
             imgApple.classList.toggle('apple09')
-            steps++
             break; 
 
-        case 10:
+        case 27:
             console.log(steps);
             imgApple.src = imgApple.src.replace(/09/g,'10')
             imgApple.classList.toggle('apple09')
             imgApple.classList.toggle('apple10')
-            steps++
             break; 
 
         default:
             break;
     }
-    
+    changeShape()
     console.log(1,2,3);
 }
 
@@ -88,10 +80,11 @@ appleBtn.onclick = () => {
 let stars = []
 let rectangles = []
 let speed
-let value = 0
+let cnv
 
 function setup() {
     createCanvas(windowWidth, windowHeight)
+    // mouseClicked(changeShape)
     for (var i = 0; i < 500; i++) {
         stars[i] = new Star()
     }
@@ -102,6 +95,7 @@ function setup() {
 
 function windowResized() {
     createCanvas(windowWidth, windowHeight)
+    // mouseClicked(changeShape)
     for (var i = 0; i < 500; i++) {
         stars[i] = new Star()
     }
@@ -172,16 +166,21 @@ function Star() {
 
 // --- Triangle settings ---
 
-function mouseClicked() {
+function changeShape() {
     if (value < 501) {
         console.log(value)
         for (var i = 0; i < 20; i++) {
             rectangles[value] = new Rect(mouseX, mouseY)
-            value++
             stars.pop()
+            value++
         }
+        
     }
+    steps++
+    console.log(steps);  
 }
+
+
 
 function Rect() {
     this.x = random(-width, width)
@@ -217,6 +216,39 @@ function Rect() {
         this.y = this.y + random(-2, 2)
     }
 }
+
+// let appleSpace = document.querySelector('.main-object')
+// let blackCover = document.querySelector('.black-cover')
+
+// let changeZIndexDown = anime({
+//     targets: appleSpace,
+//     zIndex: {
+//         value: [3, -4],
+//         round: true
+//     },
+//     autoplay: false
+// })
+
+// let changeZIndexUp = anime({
+//     targets: appleSpace,
+//     zIndex: {
+//         value: [-4, 3],
+//         round: true
+//     },
+//     autoplay: false
+// })
+
+// canvas.onclick = changeZIndexDown.play()
+// canvas.onclick = console.log('1');
+
+
+// function mouseWheel() {
+//     changeZIndexUp.play()
+// }
+
+
+
+
 
 // ---anime---
 
